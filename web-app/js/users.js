@@ -1,9 +1,30 @@
 
-	 $(".editValue").editable("http://localhost:8080/bolsa/account/edit", { 
-	  indicator : "<img src='images/icons/add.png'>",
-	  type   : 'textarea',
-	  submitdata: { _method: "put" },
-	  submit : 'OK',
-	  cancel : 'cancel',
-	  cssclass : "editable"
+
+$(".editUserValue").editable("edit", {
+	type : 'text',
+	submitdata : {
+		_method : "put"
+	},
+	submit : 'OK',
+	cancel : 'cancel',
+	style : 'max-width:100px;',
+	cssclass : "editable"
+});
+
+
+
+$(document).ready( function(){
+	$('.editUserSelect').editable('edit', {
+		data : $('#roles').val(),
+		type : 'multiselect',
+		submit : 'OK', 
+		style : 'max-width: 150px;'
 	});
+
+	$("input:submit", ".button").button();
+	$(".button").button();
+	$("#addUser").colorbox({
+		href : "add",
+		width : "75%"
+	});
+});

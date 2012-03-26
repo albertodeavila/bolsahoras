@@ -64,19 +64,15 @@ body {
 	height: 100%;
 }
 
-a:link, a:visited, a:hover {
-	color: #48802c;
-}
 
 a:hover, a:active {
 	outline: none; /* prevents outline in webkit on active links but retains it for tab focus */
 }
 
-h1 {
-	color: #48802c;
-	font-weight: normal;
-	font-size: 1.25em;
-	margin: 0.8em 0 0.3em 0;
+h1{
+	color: #CC0000;
+    font-size: 1.8em;
+    font-weight: bold;	
 }
 
 ul {
@@ -108,7 +104,7 @@ img {
 }
 
 .footer {
-	background: #abbf78;
+	background: #CC0000;
 	color: #000;
 	clear: both;
 	font-size: 0.8em;
@@ -135,11 +131,8 @@ img {
 /* NAVIGATION MENU */
 
 .nav {
-	background-color: #efefef;
+	background: none repeat scroll 0 0 #CC0000;
 	padding: 0.5em 0.75em;
-	   -moz-box-shadow: 0 0 3px 1px #aaaaaa;
-	-webkit-box-shadow: 0 0 3px 1px #aaaaaa;
-	        box-shadow: 0 0 3px 1px #aaaaaa;
 	zoom: 1;
 }
 
@@ -158,23 +151,25 @@ img {
 }
 
 .nav a {
-	color: #666666;
+	color: #000000;
 	display: block;
 	padding: 0.25em 0.7em;
 	text-decoration: none;
+	font-weight: bold;
 	   -moz-border-radius: 0.3em;
 	-webkit-border-radius: 0.3em;
 	        border-radius: 0.3em;
 }
 
 .nav a:active, .nav a:visited {
-	color: #666666;
+	color: #000000;
 }
 
 .nav a:focus, .nav a:hover {
-	background-color: #999999;
+	background-color: #000000;
 	color: #ffffff;
 	outline: none;
+	font-weight: bold;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
 }
 
@@ -247,7 +242,7 @@ label {
 
 input, select, textarea {
 	background-color: #fcfcfc;
-	border: 1px solid #cccccc;
+	border: 1px solid #aaaaaa;
 	font-size: 1em;
 	padding: 0.2em 0.4em;
 }
@@ -275,7 +270,7 @@ input[type=checkbox], input[type=radio] {
 
 input:focus, select:focus, textarea:focus {
 	background-color: #ffffff;
-	border: 1px solid #eeeeee;
+	border: 1px solid #000000;
 	outline: 0;
 	   -moz-box-shadow: 0 0 0.5em #ffffff;
 	-webkit-box-shadow: 0 0 0.5em #ffffff;
@@ -475,8 +470,8 @@ th.desc a {
 	background: #ffffff;
 }
 
-th:hover, tr:hover {
-	background: #E1F2B6;
+.jeditable tr:hover {
+	background: #CCCCCC;
 }
 
 /* PAGINATION */

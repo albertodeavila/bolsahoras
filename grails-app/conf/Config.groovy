@@ -11,7 +11,7 @@
 // }
 
 
-grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
+grails.project.groupId = app // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
 grails.mime.use.accept.header = false
 grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
@@ -97,5 +97,3 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'es.salenda.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'es.salenda.UserRole'
 grails.plugins.springsecurity.authority.className = 'es.salenda.Role'
 
-//jQuery
-//grails.views.javascript.library="jquery"
