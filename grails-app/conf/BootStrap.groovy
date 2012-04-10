@@ -1,9 +1,11 @@
-import es.salenda.Role
-import es.salenda.User
-import es.salenda.UserRole
+import es.salenda.bolsa.Role
+import es.salenda.bolsa.User
+import es.salenda.bolsa.UserRole
+
 
 class BootStrap {
-
+	
+	
     def init = { servletContext ->
 		
 		def adminRole = new Role(authority: 'ROLE_ADMIN', name: 'Administrador').save(flush: true)
@@ -19,6 +21,8 @@ class BootStrap {
 		assert User.count() == 1
 		assert Role.count() == 2
 		assert UserRole.count() == 1
+		
+		
 		
 		
     }

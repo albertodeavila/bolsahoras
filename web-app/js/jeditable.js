@@ -465,6 +465,21 @@
                     return(input);
                 }
             },
+            password: {
+                element : function(settings, original) {
+                    var input = $('<input type="password" value=""/>');
+                    if (settings.width  != 'none') { input.width(settings.width);  }
+                    if (settings.height != 'none') { input.height(settings.height); }
+                    /* https://bugzilla.mozilla.org/show_bug.cgi?id=236791 */
+                    //input[0].setAttribute('autocomplete','off');
+                    input.attr('autocomplete','off');
+                    $(this).append(input);
+                    return(input);
+                }, 
+                content : function(data, settings, original) {
+                	$(':input:first', this).val('');
+                }
+            },
             textarea: {
                 element : function(settings, original) {
                     var textarea = $('<textarea />');

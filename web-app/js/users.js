@@ -5,8 +5,6 @@ $(".editUserValue").editable("edit", {
 	submitdata : {
 		_method : "put"
 	},
-	submit : 'OK',
-	cancel : 'cancel',
 	style : 'max-width:100px;',
 	cssclass : "editable"
 });

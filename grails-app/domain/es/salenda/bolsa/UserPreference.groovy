@@ -1,4 +1,4 @@
-package bolsa
+package es.salenda.bolsa
 
 class UserPreference {
 

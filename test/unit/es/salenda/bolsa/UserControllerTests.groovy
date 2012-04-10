@@ -1,7 +1,8 @@
-package es.salenda
+package es.salenda.bolsa
 
 
 
+import es.salenda.bolsa.UserController;
 import grails.test.mixin.*
 import org.junit.*
 

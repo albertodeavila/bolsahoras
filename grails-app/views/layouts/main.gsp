@@ -20,7 +20,7 @@
 	</head>
 	<body>
 		<div id="salendaLogo" class="banner" role="banner">
-			<div class="logo">
+			<div class="floatLeft">
 				<a href="http://www.salenda.es"><img src="${resource(dir: 'images', file: 'salenda.png')}" alt="${message(code:'salenda', default:'Salenda')}"/></a>
 			</div>
 			<div class="titleApp"> 

@@ -1,4 +1,4 @@
-package es.salenda
+package es.salenda.bolsa
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 
 class LogoutController {

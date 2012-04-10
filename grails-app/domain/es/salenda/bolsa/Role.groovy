@@ -1,4 +1,4 @@
-package es.salenda
+package es.salenda.bolsa
 
 class Role {
 

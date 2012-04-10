@@ -1,8 +1,7 @@
-package es.salenda
+package es.salenda.bolsa
 
 import grails.plugins.springsecurity.Secured
 import groovy.json.JsonBuilder
-import es.salenda.User
 
 @Secured(['ROLE_ADMIN'])
 class UserController {

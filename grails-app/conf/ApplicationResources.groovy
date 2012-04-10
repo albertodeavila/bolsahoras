@@ -9,7 +9,6 @@ modules = {
 		resource url:'/js/jeditable.js', disposition:'head'
 		resource url:'/js/menu.js'
 		
-		
     }
 	buttons{
 		dependsOn 'jquery-ui'
@@ -20,7 +19,11 @@ modules = {
 		
 	}
 
-		
+	roundedBox{
+		resource url:'/js/niftycube.js'
+		resource url:'/css/niftyCorners.css'
+	}	
+	
 	overrides {
 		'jquery-theme' {
 			resource id:'theme', url:'/css/blitzer/jquery-ui-1.8.18.custom.css'

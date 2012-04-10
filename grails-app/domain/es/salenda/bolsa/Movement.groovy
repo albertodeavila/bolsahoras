@@ -1,14 +1,15 @@
-package bolsa
+package es.salenda.bolsa
+
 
 class Movement {
 	
-	String id
+	String jiraId
 	
 	String zendeskTicket
 	
 	Date creation
 	
-	Date closeDate
+	Date updateDate
 	
 	String description
 	
@@ -18,5 +19,7 @@ class Movement {
 	
 	
     static constraints = {
+		jiraId blank:false, unique:true
+		timeSpent blanck:false
     }
 }

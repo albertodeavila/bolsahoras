@@ -12,7 +12,7 @@ grails.project.dependency.resolution = {
         // uncomment to disable ehcache
         // excludes 'ehcache'
     }
-    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
 
     repositories {
@@ -22,24 +22,30 @@ grails.project.dependency.resolution = {
         grailsCentral()
         mavenCentral()
 
-        // uncomment these to enable remote dependency resolution from public Maven repositories
-        //mavenCentral()
-        //mavenLocal()
-        //mavenRepo "http://snapshots.repository.codehaus.org"
-        //mavenRepo "http://repository.codehaus.org"
-        //mavenRepo "http://download.java.net/maven/2/"
-        //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenCentral()
+        mavenLocal()
+        mavenRepo "http://snapshots.repository.codehaus.org"
+        mavenRepo "http://repository.codehaus.org"
+        mavenRepo "http://download.java.net/maven/2/"
+        mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
         // runtime 'mysql:mysql-connector-java:5.1.16'
-    }
+        runtime 'com.github.groovy-wslite:groovy-wslite:0.7.0'
+	}
 
     plugins {
         runtime ":hibernate:$grailsVersion"
-        runtime ":jquery:1.7.1"
-        runtime ":resources:1.1.6"
+        runtime ":jquery:latest.integration"
+		compile ":resources:latest.integration"
+		compile ":quartz:0.4.2"
+		compile ":crypto:latest.integration"
+		compile ":settings:latest.integration"
+		compile ":spring-security-core:latest.integration"
+		compile ":jquery-ui:latest.integration"
+				
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"

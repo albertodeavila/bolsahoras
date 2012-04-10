@@ -1,4 +1,4 @@
-package es.salenda
+package es.salenda.bolsa
 import grails.converters.JSON
 
 import javax.servlet.http.HttpServletResponse
