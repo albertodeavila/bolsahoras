@@ -560,7 +560,6 @@
 $.editable.addInputType("multiselect", {
     element: function (settings, original) {
         var select = $('<select multiple="multiple" />');
-
         if (settings.width != 'none') { select.width(settings.width); }
         if (settings.size) { select.attr('size', settings.size); }
 

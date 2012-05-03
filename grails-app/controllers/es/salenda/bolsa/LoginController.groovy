@@ -53,6 +53,7 @@ class LoginController {
 		String postUrl = "${request.contextPath}${config.apf.filterProcessesUrl}"
 		render view: view, model: [postUrl: postUrl,
 		                           rememberMeParameter: config.rememberMe.parameter]
+	
 	}
 
 	/**
@@ -114,6 +115,7 @@ class LoginController {
 			render([error: msg] as JSON)
 		}
 		else {
+			flash.messageType = 'error'
 			flash.message = msg
 			redirect action: 'auth', params: params
 		}

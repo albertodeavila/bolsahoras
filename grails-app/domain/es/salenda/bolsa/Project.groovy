@@ -4,19 +4,20 @@ package es.salenda.bolsa
 class Project {
 
 	String key
-	
 	String name
+	Client client
 	
-	static belongsTo = {client : User}
-	
-	static hasMany = {movements : Movement}
-	
+	static hasMany = [movements: Movement]
+		
     static constraints = {
-		key blank: false, unique: true
+		key blank: false
 		name blank: false
+		client nullable: true
     }
 	
 	static mapping = {
 		id name: 'key'
+        version false
+        id generator: 'assigned'
 	}
 }

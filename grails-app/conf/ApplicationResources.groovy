@@ -16,10 +16,11 @@ modules = {
 	
 	integration{
 		resource url:'/js/integration.js'
-		
+		resource url:'/css/general.css'
 	}
 
 	roundedBox{
+		resource url:'/js/roundedBox.js'
 		resource url:'/js/niftycube.js'
 		resource url:'/css/niftyCorners.css'
 	}	
@@ -28,5 +29,25 @@ modules = {
 		'jquery-theme' {
 			resource id:'theme', url:'/css/blitzer/jquery-ui-1.8.18.custom.css'
 		}
+	}
+	
+	projects {
+		resource url:'/js/project.js'
+		dependsOn 'jquery-ui'
+		resource url:'/js/niftycube.js'
+		resource url:'/css/niftyCorners.css'
+	}
+	
+	movements{
+		resource url:'/js/movements.js'
+	}
+	
+	tipsy{
+		resource url:'/js/tipsy.js'
+		resource url:'/css/tipsy.css'
+	}
+	
+	tooltip{
+		resource url:'/js/tooltip.js'
 	}
 }

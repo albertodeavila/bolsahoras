@@ -63,11 +63,25 @@ grails.hibernate.cache.queries = true
 environments {
     development {
         grails.logging.jul.usebridge = true
+//		grails.plugins.springsecurity.active = false
+		grails.mail.host = 'smtp.salenda.es'
+		grails.mail.default.from="noreply@salenda.es"
+		grails.mail.overrideAddress="alberto.deavila@salenda.es"
+		grails.mail.disabled=true
     }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
+		grails.plugins.springsecurity.active = false
+		grails.mail.host = 'smtp.salenda.es'
+		grails.mail.default.from="noreply@salenda.es"
     }
+	test {
+		grails.plugins.springsecurity.active = false
+		grails.mail.host = 'smtp.salenda.es'
+		grails.mail.default.from="noreply@salenda.es"
+		grails.mail.overrideAddress="alberto.deavila@salenda.es"
+	}
 }
 
 // log4j configuration
@@ -93,12 +107,11 @@ log4j = {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.userLookup.userDomainClassName = 'es.salenda.User'
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'es.salenda.UserRole'
-grails.plugins.springsecurity.authority.className = 'es.salenda.Role'
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'es.salenda.bolsa.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'es.salenda.bolsa.UserRole'
+grails.plugins.springsecurity.authority.className = 'es.salenda.bolsa.Role'
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/home/index'
+grails.plugins.springsecurity.interceptUrlMap = [
+	'/**':            ['IS_AUTHENTICATED_FULLY', 'IS_AUTHENTICATED_REMEMBERED'],
+	]
 
-environments {
-	test {
-		grails.plugins.springsecurity.active = false
-	}
-}

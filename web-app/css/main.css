@@ -134,6 +134,7 @@ img {
 	background: none repeat scroll 0 0 #CC0000;
 	padding: 0.5em 0.75em;
 	zoom: 1;
+	min-height: 28px;
 }
 
 .nav ul {

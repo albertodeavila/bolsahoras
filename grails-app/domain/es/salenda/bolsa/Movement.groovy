@@ -6,20 +6,32 @@ class Movement {
 	String jiraId
 	
 	String zendeskTicket
-	
-	Date creation
-	
+		
 	Date updateDate
 	
-	String description
+	String title
 	
 	Double timeSpent
 	
-	static belongsTo = {project : Project}
+	Project project
 	
+	Client client
+	
+	boolean manualMovement
+	
+	String issueType
+	
+	static mapping = {
+		version false
+	}
 	
     static constraints = {
-		jiraId blank:false, unique:true
+		jiraId nullable:true
 		timeSpent blanck:false
+		zendeskTicket nullable:true
+		project nullable:true
+		client nullable:true
+		title blank:false
+		issueType nullable:true
     }
 }

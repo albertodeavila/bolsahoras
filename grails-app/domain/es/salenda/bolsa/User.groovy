@@ -1,7 +1,6 @@
 package es.salenda.bolsa
 
 class User {
-
 	transient springSecurityService
 
 	String username
@@ -12,12 +11,14 @@ class User {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
+	Client client
 
 	static constraints = {
-		username blank: false, unique: true
+		username email:true, blank: false, unique: true
 		password blank: false
-		name blanck: false
+		name blank: false
 		surname blank: false
+		client nullable: true 
 	}
 
 	static mapping = {
@@ -37,8 +38,12 @@ class User {
 			encodePassword()
 		}
 	}
-
+	
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
+	}
+	
+	def getClients(){
+		Client.findByUser(this)
 	}
 }
