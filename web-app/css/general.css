@@ -1,0 +1,295 @@
+
+#addUserButton{
+   	min-width: 120px;
+   	margin-right: 22px;
+}
+
+#loginButton{
+	background-image: url(../images/icons/key_go.png);
+    background-repeat: no-repeat;
+    background-position: 9px;
+   	min-width: 100px;
+}
+
+#clearButton{
+	background-image: url(../images/icons/application_form.png);
+    background-repeat: no-repeat;
+    background-position: 13px;
+   	min-width: 220px;
+}
+
+#assignButton{
+	background-image: url(../images/icons/arrow_join.png);
+    background-repeat: no-repeat;
+    background-position: 13px;
+   	min-width: 130px;
+   	margin-bottom: 10px;
+    margin-right: 7px;
+}
+
+#addMovementButton{
+	background-image: url(../images/icons/report_add.png);
+    background-repeat: no-repeat;
+    background-position: 9px;
+   	min-width: 210px;
+}
+
+#payBackButton{
+	background-image: url(../images/icons/report_delete.png);
+    background-repeat: no-repeat;
+    background-position: 9px;
+   	min-width: 160px;
+}
+
+.redTitle{
+	color: #CC0000;
+	font-weight: bold;
+	font-size: 1.7em;
+}
+
+.titleApp{
+    display: block;
+    margin: 0 0 0 15px;
+    text-shadow: 0 0.1em 0.5em grey;
+    padding-top: 28px;
+    max-width: 36%;
+}
+
+.nameRightUp{
+	float: right;
+	margin-top: 30px;
+}
+
+
+.floatLeft{
+	float: left;
+}
+
+.inline{
+	display: inline-block;
+}
+
+.width100{
+	width: 100%;
+}
+
+.tableLogin{
+	width: 400px;
+	
+}
+
+.marginLeft{
+	margin-left: 10px;
+}
+
+.margin40{
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.floatRight{
+	float: right;
+}
+
+.maxWith70{
+ 	max-width: 90%;
+}
+
+.marginRigth5{
+	margin-right: 5px;
+}
+
+.maxWith300px{
+	max-width: 300px;
+}
+
+.roundedBox{
+	background: #E3E3E3;
+	color: #000000;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.jira{
+	color: #CC0000;
+	font-weight: bold;
+	font-size: 2em;
+	border-bottom: 2px inset #CC0000;
+	max-width: 95%;
+}
+
+.facturaDirecta{
+	color: #CC0000;
+	font-weight: bold;
+	font-size: 2em;
+	border-bottom: 2px inset #CC0000;
+	max-width: 95%;
+}
+
+.title{
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.example{
+	background: #CC0000;
+}
+
+.deleteButton{
+	width: -moz-max-content;
+}
+
+.width80p{
+	width: 80px;
+}
+
+.width120p{	
+	width: 120px;
+}
+
+.middleLeft{
+	width: 49%;	
+	position: relative;
+	margin-left: 7px;
+    margin-top: 10px;
+}
+
+.middleRight{
+	width: 49%;
+	float: right;
+	z-index: 1000px;
+	margin-right: 7px;
+	margin-top: -1px;
+}
+
+
+.clearBoth{
+	clear: both;
+}
+.project{
+	z-index: 1000;
+}
+
+#messageBox{
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom: 10px;
+	background: #DDFFDD;
+	color: #009900;
+}
+
+#warningBox{
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom: 10px;
+	background: #FEEFB3;
+	color: #9F6000;
+}
+
+#errorBox{
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom: 10px;
+	background: #FBC9BD;
+	color: #C52020;
+}
+
+.paddingLeft{
+	padding-left: 10px;
+}
+
+.autoHeight{
+	height: auto !important;
+}
+
+.clients{
+	width: 28%;
+	position: relative;
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+.movements{
+	width: 71%;
+	float: right; 
+}
+
+.editIntegrationURL:hover{
+	background-color: #F2F5A9;
+}
+
+.editIntegrationUsername:hover{
+	background-color: #F2F5A9;
+}
+
+.editIntegrationValuePassword:hover{
+	background-color: #F2F5A9;
+}
+.paddingBottom{
+	margin-bottom: 15px;
+}
+
+.client{
+	color: #CC0000;
+	font-weight: bold;
+	font-size: 2em;
+	border-bottom: 2px inset #CC0000;
+	max-width: 90%;
+}
+
+.hours{
+	font-weight: bold;
+	font-size: 2em;
+	max-width: 90%;
+	font-size: 5.5em;
+}
+
+.red{
+	color: #CC0000;
+}
+
+.green{
+	color: #2EFE2E;
+}
+
+.spanHours{
+	display: inline-block;
+    text-align: right;
+    width: 95%;
+}
+
+.margin10{
+	margin-left: 10px;
+	margin-bottom: 10px;
+	line-height: 30px;
+}
+
+.noBackground{
+	background-color: transparent;
+}
+
+.marginTop10{
+	margin-top: -10px;
+}
+
+.prices{
+	width: 50%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.ui-state-custom{
+	background-color: #F2F5A9 !important;
+	background-image: none !important;
+}
+
+.banner{
+	min-height: 62px;
+}
+
+.editUserSelect {
+	min-width: 115% !important;
+}
