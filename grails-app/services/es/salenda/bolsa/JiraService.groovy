@@ -66,9 +66,9 @@ class JiraService {
 		if (jira) {
 			try{
 				if(jql){
-					restResponse = jira.get(path: "/search?jql=${jql}&${fieldsIssue}")
+					restResponse = jira.get(path: "/search?jql=${jql.encodeAsURL()}&maxResults=900000&${fieldsIssue}")
 				}else{
-					restResponse = jira.get(path: "/search?&${fieldsIssue}")
+					restResponse = jira.get(path: "/search?&maxResults=900000&${fieldsIssue}")
 				}
 				issuesByProject = restResponse?.json.get('issues')
 				issuesByProject?.each {issue ->

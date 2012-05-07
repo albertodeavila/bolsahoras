@@ -43,7 +43,7 @@ class BootStrap {
 		def jiraURL = new Setting()
 		jiraURL.code = 'integration.jira'
 		jiraURL.type = 'string'
-		jiraURL.value = 'http://localhost:8090'
+		jiraURL.value = 'https://incidencias.salenda.es'
 		jiraURL.save()
 		
 		def jiraUsername = new Setting()
@@ -52,7 +52,13 @@ class BootStrap {
 		jiraUsername.value = 'alberto.deavila'
 		jiraUsername.save()
 		
-		passwordManagerService.store('jiraPass', '1234', 'jiraPass')
+		def jiraQuery = new Setting()
+		jiraQuery.code = 'integration.jiraQuery'
+		jiraQuery.type = 'string'
+		jiraQuery.value = 'resolved >= -1d and resolution is not EMPTY AND status = Terminada'
+		jiraQuery.save()
+		
+		passwordManagerService.store('jiraPass', 'vamNecky', 'jiraPass')
 		
 		jiraService.loadProjects()
 		jiraService.loadWorklogs()
