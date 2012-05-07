@@ -64,7 +64,6 @@ class IntegrationController {
 		if(!result && !result2){
 			flash.message = "Se han cargado los proyectos y los worklogs de JIRA"
 		}else{
-			println "${result} \n ${result2}"
 			flash.message = "Se ha producido un error al traer los datos de JIRA"
 			flash.messageType="error"
 		}

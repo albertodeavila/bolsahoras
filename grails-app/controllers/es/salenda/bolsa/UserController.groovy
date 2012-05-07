@@ -56,7 +56,6 @@ class UserController {
 			user.save(flush: true)
 			render (params.value.replaceAll('.', '*'))
 		}else if(userAttribute == "client"){
-		println params.value
 			if(params.value == '0'){
 				user.client = null
 				user.save(flush: true)

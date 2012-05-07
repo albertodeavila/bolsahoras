@@ -79,9 +79,9 @@ class MovementController {
 		def totalBalance = 0
 		def accumulatedBalance = []
 		if(client){
-			params.sort = params.sort ?: "updateDate"
-			params.order = params.order ?: "desc" 
-			movements = Movement.findAllByClient(client).sort{it.updateDate}.reverse()
+			params.sort = "updateDate"
+			params.order = "asc" 
+			movements = Movement.findAllByClient(client).sort{it.updateDate}
 			movements.each { movement->
 				totalBalance += movement.timeSpent
 				accumulatedBalance.add(totalBalance / 3600)
