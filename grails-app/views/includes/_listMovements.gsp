@@ -3,12 +3,12 @@
 	<table>
 		<thead>
 			<tr>
-				<g:sortableColumn property="updateDate" title="${message(code:'movement.date', default:'Fecha')}" style="width:3%" params="[clientCif:clientSelected.cif, offset:offset]" action="showMovements"/>
-				<g:sortableColumn property="zendeskTicket" title="${message(code:'movement.zendeskTicket', default:'Ticket')}" style="width:3%" params="[clientCif:clientSelected.cif, offset:offset]" action="showMovements"/>
-				<g:sortableColumn property="jiraId" title="${message(code:'movement.JIRAKey', default:'JIRA')}" style="width:3%" params="[clientCif:clientSelected.cif, offset:offset]" action="showMovements"/>
-				<g:sortableColumn property="title" title="${message(code:'movement.title', default:'Título')}" style="width:20%" params="[clientCif:clientSelected.cif, offset:offset]" action="showMovements"/>
-				<g:sortableColumn property="timeSpent" title="${message(code:'movement.hours', default:'Horas')}" style="width:3%" params="[clientCif:clientSelected.cif, offset:offset]" action="showMovements"/>
-				<th width="3%"><g:message code="movement.balance"/></th>	
+				<th width="3%"><g:message code="movement.date"/></th>
+				<th width="3%"><g:message code="movement.ZDTicket"/></th>
+				<th width="3%"><g:message code="movement.JIRAKey"/></th>	
+				<th width="20%"><g:message code="movement.title"/></th>	
+				<th width="3%"><g:message code="movement.hours"/></th>	
+				<th width="3%"><g:message code="movement.balance"/></th>
 				<sec:access expression="hasRole('ROLE_ADMIN')">
 					<th width="3%"></th>	
 				</sec:access>
@@ -69,3 +69,4 @@
 		</span>
 	</div>
 </sec:access>
+<r:external uri="/js/buttons.js"/>
