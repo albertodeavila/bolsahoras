@@ -27,7 +27,7 @@
 							<g:message code="integration.jira.query"/>:
 						</td>
 						<td colspan="3">
-							<div id="jiraQuery" class="editIntegrationURL floatRigth maxWith90">${jiraQuery}</div>
+							<div id="jiraQuery" class="editIntegrationURL floatRigth maxWith90">${jiraQuery.decodeHTML()}</div>
 						</td>
 					</tr>
 					<tr>

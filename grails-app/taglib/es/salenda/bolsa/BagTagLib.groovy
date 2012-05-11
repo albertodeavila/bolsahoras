@@ -1,6 +1,6 @@
 package es.salenda.bolsa
 
-class BolsaTagLib {
+class BagTagLib {
 	
 	def springSecurityService
 	

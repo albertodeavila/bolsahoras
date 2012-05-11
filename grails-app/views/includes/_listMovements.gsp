@@ -48,12 +48,7 @@
 			</g:each>
 		</tbody>
 	</table>
-	<sec:access expression="hasRole('ROLE_ADMIN')">
 		<g:paginate action="showMovements" offset="${offset}" next="${message(code:'default.paginate.next', default:'Siguiente')}" prev="${message(code:'default.paginate.prev', default:'Anterior')}" total="${movementCount}" params="[clientCif:clientSelected.cif, offset:offset]"/>
-	</sec:access>
-	<sec:access expression="hasRole('ROLE_USER')">
-		<g:paginate action="showMovements" offset="${offset}" next="${message(code:'default.paginate.next', default:'Siguiente')}" prev="${message(code:'default.paginate.prev', default:'Anterior')}" total="${movementCount}" params="[clientCif:clientSelected.cif, offset:offset]"/>
-	</sec:access>
 </g:if>
 <g:else>
 	<div id="warningBox" class="roundedBox">
@@ -63,6 +58,7 @@
 <sec:access expression="hasRole('ROLE_ADMIN')">
 	<div class="marginRight5" style="text-align: right" >
 		<g:hiddenField name="clientCif" value="${clientSelected.cif}"/>
+		<g:hiddenField name="bag" value="${bagSelected.id}"/>
 		<span id="addMovement" class="button ">
 			<img alt="${message(code:'movement.add.alt', default:'Agregar movimiento')}" src="${resource(file:'/images/icons/report_add.png')}"/>
 			<g:message code="movement.add"/> 

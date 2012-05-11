@@ -9,14 +9,14 @@
 	<body>
 		<div class="width100">
 			<div class="movements">
-				<g:if test="${clientSelected}">
+				<g:if test="${bagSelected}">
 					<div class="roundedBox">
 						<g:render template="../includes/listMovements" model="[movements:movements]"/>
 					</div>
 				</g:if>
 			</div>
 			<div class="clients">
-				<g:if test="${clientSelected}">
+				<g:if test="${bagSelected}">
 					<div class="roundedBox">
 						<g:if test="${balance > 0}">
 							<span class="hours title green">
@@ -31,6 +31,7 @@
 						</span>
 					</div>
 				</g:if>
+				
 				<div class="roundedBox">
 					<h3 class="client title">
 						<g:message code="clients"/>
@@ -38,10 +39,21 @@
 					<div class="margin10">
 						<g:each in="${clients}" var="client">
 							<div class="nav noBackground">
-								<g:link action="showMovements" params="[clientCif: client.cif]">
+								<g:link action="showBags" params="[clientCif: client.cif]">
 									<img alt="${message(code:'movement.show', default:'Mostrar movimientos')}" src="${resource(file:'/images/icons/resultset_next.png')}"/>${client.name}
 								</g:link>
 							</div>
+							<g:if test="${clientSelected != null && (client.cif == clientSelected.cif)}">
+								<div class="margin20">
+									<g:each in="${clientSelected.bags.sort{it.id}}" var="bag">
+										<div class="nav noBackground">
+											<g:link action="showMovements" params="[bag: bag.id, clientCif: client.cif]">
+												<img alt="${message(code:'movement.show', default:'Mostrar movimientos')}" src="${resource(file:'/images/icons/bullet_green.png')}"/>${bag.name}
+											</g:link>
+										</div>
+									</g:each>
+								</div>
+							</g:if>
 						</g:each>
 					</div>
 				</div>

@@ -28,6 +28,7 @@ $(document).ready( function(){
 			active: false 
 		});
 		Nifty("div.roundedBox","small");
+		
 
 		$("#projectsWithoutClient").accordion({
 			collapsible: true
@@ -42,3 +43,9 @@ function cursorOver(div){
 	$("#" + div.id + "").css('cursor', 'move');
 };
 
+function showColorbox(id){
+	  $.fn.colorbox({
+		  width:"50%", 
+		  href : "addBag?clientCif=" + id
+	  });
+};

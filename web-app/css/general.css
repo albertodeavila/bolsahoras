@@ -87,6 +87,11 @@
 	margin-right: 40px;
 }
 
+.margin20{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 .floatRight{
 	float: right;
 }
@@ -292,4 +297,32 @@
 
 .editUserSelect {
 	min-width: 115% !important;
+}
+
+.statisticRed{
+	background-color: red;
+}
+
+.statisticGreen{
+	background-color: green;
+}
+
+.statisticYellow{
+	background-color: yellow;
+}
+
+.marginTop{
+	margin-top: 4px;
+}
+
+.box{
+	border-color: darkGray;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    min-height: 35px;
+}
+
+.paddingBotton{
+	padding-left: 54%;
 }

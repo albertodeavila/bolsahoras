@@ -6,6 +6,8 @@ class Client {
 	String cif
 	String name
 	
+	static hasMany = [bags: Bag]
+	
     static constraints = {
 		cif blank: false
 		name blank: false
@@ -21,8 +23,4 @@ class Client {
 		"${name} - ${cif}"
 	}
 	
-	def getProjects(){
-		def projects = Project.findAllByClient(this)
-		projects
-	}
 }

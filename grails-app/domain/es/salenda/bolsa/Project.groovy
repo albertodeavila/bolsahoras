@@ -5,14 +5,14 @@ class Project {
 
 	String key
 	String name
-	Client client
+	Bag bag
 	
 	static hasMany = [movements: Movement]
 		
     static constraints = {
 		key blank: false
 		name blank: false
-		client nullable: true
+		bag nullable: true
     }
 	
 	static mapping = {

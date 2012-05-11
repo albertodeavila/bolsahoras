@@ -107,11 +107,14 @@ class JiraService {
 						m.timeSpent = totalWorklogInSeconds
 						m.project = project
 						m.manualMovement = false
-						m.save(flush: true)
 						if(project){
+							if(project.bag){
+								m.bag = project.bag
+							}
 							project.addToMovements(m)
 							project.save(flush: true)
 						}
+						m.save(flush: true)
 					}
 				}
 			}catch(Exception e){

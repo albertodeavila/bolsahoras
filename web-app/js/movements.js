@@ -10,7 +10,7 @@ $(document).ready( function(){
 
 	$(".button").button();
 	$("#addMovement").colorbox({
-		href : "add?clientCif=" + $("#clientCif").val(),
+		href : "add?clientCif=" + $("#clientCif").val() + "&bag=" + $("#bag").val(),
 		width : "25%"
 	});	
 	
@@ -19,7 +19,7 @@ $(document).ready( function(){
 function showColorbox(id){
 	  $.fn.colorbox({
 		  width:"50%", 
-		  href : "subtract?clientCif=" + $("#clientCif").val() + "&movementId=" + id,
+		  href : "subtract?clientCif=" + $("#clientCif").val() + "&movementId=" + id + "&bag=" + $("#bag").val(),
 	  });
 }
 

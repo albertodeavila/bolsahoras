@@ -15,7 +15,7 @@ class Movement {
 	
 	Project project
 	
-	Client client
+	Bag bag
 	
 	boolean manualMovement
 	
@@ -30,7 +30,7 @@ class Movement {
 		timeSpent blanck:false
 		zendeskTicket nullable:true
 		project nullable:true
-		client nullable:true
+		bag nullable:true
 		title blank:false
 		issueType nullable:true
     }

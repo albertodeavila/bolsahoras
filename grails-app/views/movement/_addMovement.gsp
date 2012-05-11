@@ -45,6 +45,7 @@
 			<tr>
 				<td colspan ="5" style="text-align:right">
 					<g:hiddenField name="clientCif" value="${clientCif}"/> 
+					<g:hiddenField name="bag" value="${bagId}"/>
 					<g:submitButton id="addMovementButton" class="button" name="addMovementButton" value="${message(code:'movement.create', default:'Agregar movimiento')}"/>
 				</td>
 			</tr>
