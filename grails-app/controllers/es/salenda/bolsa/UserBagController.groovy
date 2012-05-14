@@ -20,8 +20,9 @@ class UserBagController {
 		def totalBalance = 0
 		def accumulatedBalance = []
 		def bag
+		
 		if(user.client){
-			bags = Bag.findAllByClient(user.client).sort{it.id}
+			bags = user.bags.sort{it.id}
 			bag = Bag.findById(params.bag)
 			movements += Movement.findAllByBag(bag).reverse()
 			movements.each { movement->
@@ -42,8 +43,8 @@ class UserBagController {
 		def user = springSecurityService.currentUser
 		def bags = []
 		if(user.client){
-			bags = Bag.findAllByClient(user.client)
+			bags = user.bags.sort{it.id}
 		}
-		render (view: "listUserMovements", model: [clientSelected: user.client])
+		render (view: "listUserMovements", model: [clientSelected: user.client, bags:bags])
 	}
 }

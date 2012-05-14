@@ -118,4 +118,40 @@ class UserController {
 		render (template: 'addUser', model:[userRoles: Role.findAll(), clients: Client.findAll()])
 	}
 	
+	def bags(){
+		def user = User.findById(params.userId)
+		def bags = []
+		if(user.client){
+			bags = Bag.findAllByClient(user.client)
+		}
+		render (template: 'bagVisible', model:[bags:bags, user:user])
+	}
+	
+	def editBagVisible(){
+		def bags = params.bagSelected
+		def user = User.findById(params.userId)
+		def adminRol = Role.findByAuthority('ROLE_USER')
+		def isUser = UserRole.get(user.id, adminRol.id)
+		if(isUser){
+			user.bags.clear()
+			
+			if(params.bagSelected.contains("0")){
+				def allBags = Bag.findAllByClient(user.client)
+				allBags.each {bag->
+					user.addToBags (bag)
+				}
+			}else{
+				bags.each {bagId->
+					def bag = Bag.findById(bagId)
+					user.addToBags(bag)
+				}
+			}
+			user.save(flush: true)
+			flash.message = 'Se han guardado correctamente las bolsas que puede ver el usuario'
+		}else{
+			flash.messageType = 'error'
+			flash.message = 'El usuario debe tener rol de cliente'
+		}
+		show()
+	}
 }

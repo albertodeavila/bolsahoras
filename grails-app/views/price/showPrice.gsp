@@ -112,6 +112,11 @@
 					</tr>
 				</tbody>
 			</table>
+			<div class="conditions">
+				<span>
+					* Estos precios no incluyen IVA
+				</span>
+			</div>			
 		</div>
 	</body>
 </html>

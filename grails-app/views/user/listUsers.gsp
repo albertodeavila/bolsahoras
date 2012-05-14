@@ -50,6 +50,9 @@
 								</div>
 							</td>
 							<td width="10%">
+								<span id="bags_${user.id}" class="button deleteButton" onclick="showColorbox(${user.id})" title="${message(code:'userManagment.bag', default:'Asignar bolsas que puede ver')}"> 
+									<img alt="${message(code:'userManagment.bag', default:'Asignar bolsas que puede ver')}" src="${resource(file:'/images/icons/basket_edit.png')}"  /> 
+								</span>
 								<g:link class="button deleteButton" action="delete" params="[userId: user.id]" title="${message(code:'userManagment.delete.alt', default:'Borrar usuario')}"> 
 									<img alt="${message(code:'userManagment.delete.alt', default:'Borrar usuario')}" src="${resource(file:'/images/icons/user_delete.png')}"  /> 
 								</g:link>
@@ -60,7 +63,7 @@
 			</table>
 			<g:paginate action="show" offset="${offset}" next="${message(code:'default.paginate.next', default:'Siguiente')}" prev="${message(code:'default.paginate.prev', default:'Anterior')}" total="${userTotal}" params="[offset:offset]"/>
 			<div class="marginLeft"  style="text-align:right">
-				<span id="addUserButton" class="button">
+				<span id="addUser" class="button">
 					<img alt="${message(code:'userManagment.add.alt', default:'Agregar usuario')}" src="${resource(file:'/images/icons/user_add.png')}"/>
 					<g:message code="userManagment.add"/> 
 				</span>

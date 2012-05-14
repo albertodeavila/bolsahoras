@@ -4,6 +4,7 @@
 	<head>
 		<meta name="layout" content="main"/>
 		<title> <g:message code="clients"/> </title>
+		<r:require module="roundedBox"/>
 	</head>
 	<body>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>

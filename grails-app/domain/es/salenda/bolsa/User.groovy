@@ -12,6 +12,8 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 	Client client
+	
+	static hasMany = [bags: Bag]
 
 	static constraints = {
 		username email:true, blank: false, unique: true

@@ -31,10 +31,10 @@
 								</h3>
 								<div id="${client.cif}" class="autoHeight" >
 									<g:each in="${client.bags}" var="bag">
-										<div id="${bag.id}" class="placeholder roundedBox noBackground box" onChange="this.style.color='red'">
+										<div id="${bag.id}" class="placeholder noBackground box" onChange="this.style.color='red'">
 											<h4 class="marginLeft marginTop">${bag.name}
 											<g:link class="button deleteButton floatRight" action="deleteBag" params="[bag: bag.id]" title="${message(code:'deleteBag', default:'Borrar bolsa')}"> 
-												<img alt="${message(code:'bag.deleteBag', default:'Borrar bolsa')}" src="${resource(file:'/images/icons/delete.png')}"  /> 
+												<img alt="${message(code:'bag.deleteBag', default:'Borrar bolsa')}" src="${resource(file:'/images/icons/basket_delete.png')}"  /> 
 											</g:link>
 											</h4>
 											<g:each in="${bag.projects}" var="project">
@@ -47,7 +47,7 @@
 									</g:each>
 									<div class="paddingBotton">
 										<span id="${client.cif}" class="button" title="${message(code:'bag.add', default:'Agregar bolsa')}" onclick="showColorbox('${client.cif}')">
-											<img alt="${message(code:'bag.add', default:'Agregar bolsa')}" src="${resource(file:'/images/icons/add.png')}"  /> <g:message code="bag.add"/>
+											<img alt="${message(code:'bag.add', default:'Agregar bolsa')}" src="${resource(file:'/images/icons/basket_add.png')}"  /> <g:message code="bag.add"/>
 										</span>
 									</div>
 								</div>

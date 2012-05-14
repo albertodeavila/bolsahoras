@@ -4,7 +4,7 @@ $(".editIntegrationURL").editable("edit", {
 		_method : "put"
 	},
 	cssclass : "editable", 
-	style : "width:100%;"
+	style : "width:100%;" 
 });
 
 $(".editIntegrationUsername").editable("edit", {
@@ -22,6 +22,7 @@ $(".editIntegrationValuePassword").editable("edit", {
 	},
 	cssclass : "editable"
 });
+
 
 
 

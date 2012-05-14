@@ -38,4 +38,12 @@ $(document).ready( function(){
 		href : "add",
 		width : "42%"
 	});
+	
 });
+
+function showColorbox(id){
+	  $.fn.colorbox({
+		  href : "bags?userId=" + id,
+		  width : "50%"
+	  });
+}
