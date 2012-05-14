@@ -463,6 +463,12 @@
                     input.attr('autocomplete','off');
                     $(this).append(input);
                     return(input);
+                },
+                content : function(data, settings, original) {
+                	var dataScaped = data.replace(/&gt;/g, ">");
+                	dataScaped = dataScaped.replace(/&lt;/g, "<");
+                	dataScaped = dataScaped.replace(/&amp;/g, "&");
+                	$(':input:first', this).val(dataScaped);
                 }
             },
             password: {
