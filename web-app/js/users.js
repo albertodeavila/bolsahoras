@@ -1,5 +1,3 @@
-
-
 $(".editUserValue").editable("edit", {
 	type : 'text',
 	submitdata : {
@@ -24,14 +22,12 @@ $(document).ready( function(){
 		submit : 'OK', 
 		style : 'width:100% !important;'
 	});
-	
 	$('.editClientSelect').editable('edit', {
 		data : $('#clients').val(),
 		type : 'select',
 		submit : 'OK', 
 		style : 'max-width: 150px; position:relative; z-index: 1000;'
 	});
-
 	$("input:submit", ".button").button();
 	$(".button").button();
 	$("#addUser").colorbox({
@@ -42,8 +38,6 @@ $(document).ready( function(){
 });
 
 function showColorbox(id){
-	  $.fn.colorbox({
-		  href : "bags?userId=" + id,
-		  width : "50%"
+	  $.fn.colorbox({ href : "bags?userId=" + id, width : "50%"
 	  });
 }

@@ -12,9 +12,7 @@ class IntegrationController {
 	 * Dependency injection for the simplePasswordManagerService.
 	 */
 	def simplePasswordManagerService
-
 	def jiraService
-	
 	def facturaDirectaService
 	
 	

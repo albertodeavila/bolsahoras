@@ -37,7 +37,7 @@
 							<td width="6%">
 								<div id="password_${user.id}" class="editValuePassword">******</div>
 							</td>
-							<td width="45%">
+							<td width="25%">
 								<div id="client_${user.id}" class="editClientSelect">
 									<g:if test="${user.client !=null }">
 										${user.client.name}	
@@ -49,7 +49,7 @@
 									${user.authorities*.name.join(', ')}	
 								</div>
 							</td>
-							<td width="10%">
+							<td width="25%">
 								<span id="bags_${user.id}" class="button deleteButton" onclick="showColorbox(${user.id})" title="${message(code:'userManagment.bag', default:'Asignar bolsas que puede ver')}"> 
 									<img alt="${message(code:'userManagment.bag', default:'Asignar bolsas que puede ver')}" src="${resource(file:'/images/icons/basket_edit.png')}"  /> 
 								</span>

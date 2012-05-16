@@ -1,11 +1,4 @@
 $(document).ready( function(){
-//	Nifty("li.roundedBox","big");
-//	Nifty("div.movements", "small");
-
-//	Nifty("li#split h3","top");
-//	Nifty("li#split div","bottom same-height");
-	
-	
 	Nifty("div.roundedBox", "big");
 
 	$(".button").button();

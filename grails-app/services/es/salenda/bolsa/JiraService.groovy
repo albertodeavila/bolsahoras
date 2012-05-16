@@ -149,24 +149,33 @@ class JiraService {
 		return jira
 	}
 	
-	
+	/**
+	 * Method that calculate if a bag has his amount under the limit stablished
+	 * @return
+	 */
 	def sendNotificationLimitHours(){
 		def clients = Client.findAll()
 		def bagLimit = Setting.findByCode("integration.bagLimit")?.value
 		if(bagLimit){
 			clients.each{ client->
-				def movements = Movement.findAllByClient(client)
-				def remaining = 0
-				movements.each {movement->
-					remaining += movement.timeSpent
-				}
-				remaining = remaining / 3600
-				if(remaining <= bagLimit){
-					def user = User.findByClient (client)
-					notificationService.sendLimitBagNotification(user)
+				def bags = clients.bags
+				bags.each{ bag->
+					def movements = Movement.findAllByBag(bag)
+					def remaining = 0
+					movements.each {movement->
+						remaining += movement.timeSpent
+					}
+					remaining = remaining / 3600
+					if(remaining <= bagLimit){
+						def users = User.findAllByClient (client)
+						if(users){
+							users.each{user->
+								notificationService.sendLimitBagNotification(user)
+							}
+						}
+					}
 				}
 			}
 		}
 	}
-	
 }

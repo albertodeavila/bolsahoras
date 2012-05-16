@@ -45,7 +45,4 @@ class User {
 		password = springSecurityService.encodePassword(password)
 	}
 	
-	def getClients(){
-		Client.findByUser(this)
-	}
 }
