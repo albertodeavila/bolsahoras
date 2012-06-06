@@ -80,7 +80,7 @@ class MovementController {
 	
 	def showMovements(){
  		def offset= (params.offset) ? params.offset.toInteger() : 0
-		def bag = Bag.findById(params.bag)
+		def bag = Bag.findById(params.bagId)
 		def client = Client.findByCif(params.clientCif)
 		def bagsByUser = Bag.findAllByClient(client).sort{it.id}
 		def movements = []
@@ -110,5 +110,29 @@ class MovementController {
 			timeSpentSum += mov.timeSpent
 		}
 		timeSpentSum
+	}
+	
+	def moveToBag(){
+		def client = Client.findByCif(params.clientCif)
+		def bag = Bag.findById(params.bagId)
+		def bagsByUser = Bag.findAllByClient(client).sort{it.id}
+		bagsByUser.remove(bag)
+		render (template: 'moveMovement', model:[clientCif: params.clientCif, bags: bagsByUser, bagId: params.bagId, movementId: params.movementId])
+	}
+	
+	def move(){
+		def mov = Movement.findById(params.movementId)
+		def bag = Bag.findById(params.bagToMove)
+		if(mov && bag){
+			mov.bag = bag
+			mov.manualMovement = true
+			def project = mov.project
+			if(project){
+				project.removeFromMovements(mov)
+				project.save(flush:true)
+			}
+			mov.save(flush:true)
+		}
+		showMovements()
 	}
 }

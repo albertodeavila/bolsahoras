@@ -410,7 +410,7 @@ tr>td:first-child, tr>th:first-child {
 }
 
 tr>td:last-child, tr>th:last-child {
-	padding-right: 1.25em;
+	padding-right: 0.25em;
 }
 
 td, th {

@@ -3,6 +3,7 @@
 	<meta name='layout' content='main'/>
 	<title><g:message code="app"/></title>
 	<r:require module="buttons"/>
+	<r:require module="roundedBox"/>
 </head>
 
 <body>

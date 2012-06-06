@@ -7,7 +7,7 @@
 					<g:message code="bag.title"/>
 				</td>
 				<td>
-					<g:textField name="name" value="${timeCanSpent}"/>
+					<g:textField name="name"/>
 				</td>
 			</tr>
 			<tr>

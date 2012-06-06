@@ -8,9 +8,6 @@ import es.salenda.bolsa.PasswordManagerService;
 import grails.test.mixin.*
 
 
-/**
- * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
- */
 @TestFor(JiraService)
 @Mock ([Setting, PasswordManagerService, EncryptedData, Project, Movement])
 class JiraServiceTests {

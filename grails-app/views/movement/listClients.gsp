@@ -9,11 +9,18 @@
 	<body>
 		<div class="width100">
 			<div class="movements">
-				<g:if test="${bagSelected}">
-					<div class="roundedBox">
-						<g:render template="../includes/listMovements" model="[movements:movements]"/>
+				<g:if test="${clientSelected && !clientSelected.bags}">
+					<div id="warningBox" class="roundedBox">
+						<g:message code="movement.noBags"/>
 					</div>
 				</g:if>
+				<g:else>
+					<g:if test="${bagSelected}">
+						<div class="roundedBox">
+							<g:render template="../includes/listMovements" model="[movements:movements]"/>
+						</div>
+					</g:if>
+				</g:else>
 			</div>
 			<div class="clients">
 				<g:if test="${bagSelected}">
@@ -43,11 +50,11 @@
 									<img alt="${message(code:'movement.show', default:'Mostrar movimientos')}" src="${resource(file:'/images/icons/resultset_next.png')}"/>${client.name}
 								</g:link>
 							</div>
-							<g:if test="${clientSelected != null && (client.cif == clientSelected.cif)}">
+							<g:if test="${clientSelected && (client.cif == clientSelected.cif)}">
 								<div class="margin20">
 									<g:each in="${clientSelected.bags.sort{it.id}}" var="bag">
 										<div class="nav noBackground">
-											<g:link action="showMovements" params="[bag: bag.id, clientCif: client.cif]">
+											<g:link action="showMovements" params="[bagId: bag.id, clientCif: client.cif]">
 												<img alt="${message(code:'movement.show', default:'Mostrar movimientos')}" src="${resource(file:'/images/icons/bullet_green.png')}"/>${bag.name}
 											</g:link>
 										</div>

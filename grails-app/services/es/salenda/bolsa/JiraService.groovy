@@ -90,10 +90,13 @@ class JiraService {
 						totalWorklogInSeconds = 0
 					}
 					
-					if(m && totalWorklogInSeconds > m.timeSpent){
+					if(m && !m.manualMovement && totalWorklogInSeconds > m.timeSpent){
 						project.removeFromMovements(m)
 						project.save(flush:true)
 						m.delete(flush:true)
+					}else if(m && m.manualMovement && totalWorklogInSeconds > m.timeSpent){
+						m.timeSpent = totalWorklogInSeconds
+						println 'nueva funcionalidad------'
 					}
 					if(!m){
 						m = new Movement()

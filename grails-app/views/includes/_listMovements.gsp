@@ -10,7 +10,7 @@
 				<th width="3%"><g:message code="movement.hours"/></th>	
 				<th width="3%"><g:message code="movement.balance"/></th>
 				<sec:access expression="hasRole('ROLE_ADMIN')">
-					<th width="3%"></th>	
+					<th width="21%"></th>	
 				</sec:access>
 			</tr>
 		</thead>
@@ -37,8 +37,11 @@
 					</td>
 					<sec:access expression="hasRole('ROLE_ADMIN')">
 						<td>
+							<span id="move_${movement.id}" class="button move" title="${message(code:'movement.move', default:'Mover')}" onclick="showColorboxMove(${movement.id})">
+								<img alt="${message(code:'movement.move', default:'Mover')}" src="${resource(file:'/images/icons/report_go.png')}"  /> 
+							</span>
 							<g:if test="${movement.timeSpent < 0}">
-								<span id="${movement.id}" class="button payBack" title="${message(code:'movement.payBack', default:'Reembolsar')}" onclick="showColorbox(${movement.id})">
+								<span id="payback_${movement.id}" class="button payBack" title="${message(code:'movement.payBack', default:'Reembolsar')}" onclick="showColorboxPayback(${movement.id})">
 									<img alt="${message(code:'movement.payBack.alt', default:'Reembolsar movimiento')}" src="${resource(file:'/images/icons/report_delete.png')}"  /> 
 								</span>
 							</g:if>
@@ -58,7 +61,7 @@
 <sec:access expression="hasRole('ROLE_ADMIN')">
 	<div class="marginRight5" style="text-align: right" >
 		<g:hiddenField name="clientCif" value="${clientSelected.cif}"/>
-		<g:hiddenField name="bag" value="${bagSelected.id}"/>
+		<g:hiddenField name="bagId" value="${bagSelected.id}"/>
 		<span id="addMovement" class="button ">
 			<img alt="${message(code:'movement.add.alt', default:'Agregar movimiento')}" src="${resource(file:'/images/icons/report_add.png')}"/>
 			<g:message code="movement.add"/> 

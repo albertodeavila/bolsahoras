@@ -9,10 +9,17 @@ $(document).ready( function(){
 	
 });
 
-function showColorbox(id){
+function showColorboxPayback(id){
 	  $.fn.colorbox({
 		  width:"50%", 
-		  href : "subtract?clientCif=" + $("#clientCif").val() + "&movementId=" + id + "&bag=" + $("#bag").val(),
+		  href : "subtract?clientCif=" + $("#clientCif").val() + "&movementId=" + id + "&bagId=" + $("#bagId").val(),
+	  });
+}
+
+function showColorboxMove(id){
+	  $.fn.colorbox({
+		  width:"50%", 
+		  href : "moveToBag?clientCif=" + $("#clientCif").val() + "&movementId=" + id + "&bagId=" + $("#bagId").val(),
 	  });
 }
 

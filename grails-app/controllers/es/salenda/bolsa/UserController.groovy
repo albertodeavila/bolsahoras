@@ -78,15 +78,13 @@ class UserController {
 		def user = new User(username: params.email, enabled: true, password: params.password, name: params.name, surname: params.surname, client: client)
 		user.save(flush: true)
 		
-		params.userRoles.each{
-			UserRole.create user, Role.findById(it.value.toString()), true
-		}
-		
-		
 		if(!user.errors.allErrors.empty){
 			flash.messageType = 'error'
 			flash.message = 'No se ha creado el usuario'
 		}else{
+			params.userRoles.each{
+				UserRole.create user, Role.findById(it.value.toString()), true
+			}
 			flash.message = 'Usuario creado correctamente'
 			notificationService.sendNewUserNotification(user, params.password)
 		}

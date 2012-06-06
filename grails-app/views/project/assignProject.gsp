@@ -61,17 +61,15 @@
 			</g:form>
 		</g:if>
 		<g:else>
-			<g:if test="${!clients && !projects}">
+			<g:if test="${!projects}">
 				<div id="warningBox" class="roundedBox">
 					<g:message code="projects.noClientsNeitherProjects"/>
 				</div>
 			</g:if>
 			<g:else>
-				<g:if test="${!clients}">
-					<div id="warningBox" class="roundedBox">
-						<g:message code="projects.noClients"/>
-					</div>
-				</g:if>
+				<div id="warningBox" class="roundedBox">
+					<g:message code="projects.noClients"/>
+				</div>
 			</g:else>
 		</g:else>
 	</body>	

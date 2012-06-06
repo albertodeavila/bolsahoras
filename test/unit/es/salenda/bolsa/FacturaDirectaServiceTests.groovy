@@ -5,9 +5,6 @@ import grails.test.mixin.*
 import org.grails.plugins.settings.Setting
 import org.junit.*
 
-/**
- * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
- */
 @TestFor(FacturaDirectaService)
 @Mock ([Setting, PasswordManagerService, EncryptedData, Client])
 class FacturaDirectaServiceTests {
