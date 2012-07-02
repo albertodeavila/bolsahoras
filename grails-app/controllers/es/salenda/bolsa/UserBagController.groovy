@@ -20,7 +20,7 @@ class UserBagController {
 		def bag
 		if(user.client){
 			bags = user.bags.sort{it.id}
-			bag = Bag.findById(params.bag)
+			bag = Bag.findById(params.bagId)
 			movements += Movement.findAllByBag(bag).reverse()
 			movements.each { movement->
 				totalBalance += movement.timeSpent

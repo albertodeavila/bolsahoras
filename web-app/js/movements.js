@@ -3,7 +3,7 @@ $(document).ready( function(){
 
 	$(".button").button();
 	$("#addMovement").colorbox({
-		href : "add?clientCif=" + $("#clientCif").val() + "&bag=" + $("#bag").val(),
+		href : "add?clientCif=" + $("#clientCif").val() + "&bagId=" + $("#bagId").val(),
 		width : "25%"
 	});	
 	

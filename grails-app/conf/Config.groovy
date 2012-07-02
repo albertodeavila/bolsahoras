@@ -72,7 +72,6 @@ environments {
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
-		grails.plugins.springsecurity.active = false
 		grails.mail.host = 'smtp.salenda.es'
 		grails.mail.default.from="noreply@salenda.es"
     }

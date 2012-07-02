@@ -25,6 +25,7 @@ class User {
 
 	static mapping = {
 		password column: '`password`'
+		bags cascade: 'all-delete-orphan'
 	}
 
 	Set<Role> getAuthorities() {

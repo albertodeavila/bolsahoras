@@ -12,8 +12,8 @@ class BootStrap {
 	def facturaDirectaService
 	
     def init = { servletContext ->
-		def adminRole = new Role(authority: 'ROLE_ADMIN', name: 'Administrador').save(flush: true)
-		def userRole = new Role(authority: 'ROLE_USER', name: 'Usuario').save(flush: true)
+		def adminRole = new Role(authority: 'ROLE_ADMIN', name: 'Administrador').save([flush: true, failOnError: true])
+		def userRole = new Role(authority: 'ROLE_USER', name: 'Usuario').save([flush: true, failOnError: true])
   
 		def testUser = new User(username: 'alberto.deavila@salenda.es', enabled: true, password: '1234', name: 'Alberto', surname: 'De Avila')
 		testUser.save(flush: true)

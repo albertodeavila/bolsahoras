@@ -51,7 +51,7 @@
 			</g:each>
 		</tbody>
 	</table>
-		<g:paginate action="showMovements" offset="${offset}" next="${message(code:'default.paginate.next', default:'Siguiente')}" prev="${message(code:'default.paginate.prev', default:'Anterior')}" total="${movementCount}" params="[clientCif:clientSelected.cif, offset:offset]"/>
+		<g:paginate action="showMovements" offset="${offset}" next="${message(code:'default.paginate.next', default:'Siguiente')}" prev="${message(code:'default.paginate.prev', default:'Anterior')}" total="${movementCount}" params="[clientCif:clientSelected.cif, offset:offset, bagId:bagSelected.id]"/>
 </g:if>
 <g:else>
 	<div id="warningBox" class="roundedBox">

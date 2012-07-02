@@ -33,7 +33,7 @@
 									<g:each in="${client.bags}" var="bag">
 										<div id="${bag.id}" class="placeholder noBackground box" onChange="this.style.color='red'">
 											<h4 class="marginLeft marginTop">${bag.name}
-											<g:link class="button deleteButton floatRight" action="deleteBag" params="[bag: bag.id]" title="${message(code:'deleteBag', default:'Borrar bolsa')}"> 
+											<g:link class="button deleteButton floatRight" action="deleteBag" params="[bagId: bag.id]" title="${message(code:'deleteBag', default:'Borrar bolsa')}"> 
 												<img alt="${message(code:'bag.deleteBag', default:'Borrar bolsa')}" src="${resource(file:'/images/icons/basket_delete.png')}"  /> 
 											</g:link>
 											</h4>

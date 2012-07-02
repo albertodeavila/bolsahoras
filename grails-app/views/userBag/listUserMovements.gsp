@@ -49,7 +49,7 @@
 						<g:if test="${bags != null && bags.size() > 0}">
 							<g:each in="${bags}" var="bag">
 								<div class="nav noBackground bag">
-									<g:link action="showMovements" params="[bag: bag.id, clientCif: clientSelected.cif]">
+									<g:link action="showMovements" params="[bagId: bag.id, clientCif: clientSelected.cif]">
 										<img alt="${message(code:'movement.show', default:'Mostrar movimientos')}" src="${resource(file:'/images/icons/bullet_green.png')}"/>${bag.name}
 									</g:link>
 								</div>

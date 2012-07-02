@@ -15,7 +15,7 @@
 					<td colspan="2" style="text-align:right">
 						<g:hiddenField name="clientCif" value="${clientCif}"/>
 						<g:hiddenField name="movementId" value="${movementId}"/>
-						<g:hiddenField name="bag" value="${bagId}"/>
+						<g:hiddenField name="bagId" value="${bagId}"/>
 						<g:submitButton id="payBackButton" class="button" name="payBackButton" value="${message(code:'movement.payBack', default:'Reembolsar')}"/>
 					</td>
 				</tr>

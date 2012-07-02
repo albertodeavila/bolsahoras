@@ -17,7 +17,7 @@ class MovementController {
 		mov.updateDate = Date.parse("dd/MM/yyyy", params.date)
 		mov.title = params.title
 		mov.timeSpent = Double.parseDouble(params.hours) * 3600
-		def bag = Bag.findById(params.bag)
+		def bag = Bag.findById(params.bagId)
 		if(bag){
 			mov.bag = bag
 		} 
@@ -28,7 +28,7 @@ class MovementController {
 	}
 	
 	def add() {
-		render (template: 'addMovement', model:[clientCif: params.clientCif, bagId:params.bag])
+		render (template: 'addMovement', model:[clientCif: params.clientCif, bagId: params.bagId])
 	}
 	
 	def subtract(){
@@ -37,11 +37,11 @@ class MovementController {
 		if (timeSpentSum != 0){
 			timeSpentSum = timeSpentSum / -3600
 		}
-		render (template: 'payBack', model:[clientCif: params.clientCif, movementId: params.movementId, timeCanSpent: timeSpentSum, bagId:params.bag])
+		render (template: 'payBack', model:[clientCif: params.clientCif, movementId: params.movementId, timeCanSpent: timeSpentSum, bagId:params.bagId])
 	}
 	
 	def payBack(){
-		def bag = Bag.findById(params.bag)
+		def bag = Bag.findById(params.bagId)
 		def timeSpent = Double.parseDouble(params.payBackHours) * 3600
 		if(timeSpent > 0){
 			def movementRefferred = Movement.findById(params.movementId)

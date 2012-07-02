@@ -74,11 +74,19 @@ class ProjectController {
 	
 	def deleteBag(){
 		def result
-		def bag = Bag.findById(params.bag)
+		def bag = Bag.findById(params.bagId)
 		def movements = Movement.findAllByBag(bag)
 		movements.each { movement->
 			movement.bag = null
+			movement.save(flush:true)
 		}
+		
+		def projects = Project.findByBag(bag)
+		projects.each {project->
+			project.bag = null
+			project.save(flush:true)
+		}
+		
 		bag.delete(flush:true)
 		if(!bag.errors.allErrors.empty){
 			result = 'Se ha producido un error al borrar una bolsa'
