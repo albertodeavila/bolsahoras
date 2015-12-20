@@ -64,22 +64,22 @@ environments {
     development {
         grails.logging.jul.usebridge = true
 //		grails.plugins.springsecurity.active = false
-		grails.mail.host = 'smtp.salenda.es'
-		grails.mail.default.from="noreply@salenda.es"
-		grails.mail.overrideAddress="alberto.deavila@salenda.es"
+		grails.mail.host = 'YOUR.SMTP.COM'
+		grails.mail.default.from="YOUR_MAIL@mail.com"
+		grails.mail.overrideAddress="YOUR_MAIL@mail.com"
 		grails.mail.disabled=true
     }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
-		grails.mail.host = 'smtp.salenda.es'
+		grails.mail.host = 'YOUR.SMTP.COM'
 		grails.mail.default.from="noreply@salenda.es"
     }
 	test {
 		grails.plugins.springsecurity.active = false
-		grails.mail.host = 'smtp.salenda.es'
-		grails.mail.default.from="noreply@salenda.es"
-		grails.mail.overrideAddress="alberto.deavila@salenda.es"
+		grails.mail.host = 'YOUR.SMTP.COM'
+		grails.mail.default.from="YOUR_MAIL@mail.com"
+		grails.mail.overrideAddress="YOUR_MAIL@mail.com"
 	}
 }
 

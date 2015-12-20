@@ -23,7 +23,7 @@ class JiraServiceTests {
 		 def jiraUsername = new Setting()
 		 jiraUsername.code = 'integration.jiraUsername'
 		 jiraUsername.type = 'string'
-		 jiraUsername.value = 'alberto.deavila'
+		 jiraUsername.value = 'your_username'
 		 jiraUsername.save()
 		 
 		 def passwordManagerService = new PasswordManagerService()
